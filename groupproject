@@ -1,0 +1,182 @@
+\section{Requirement 1}
+These are requirements for blood donation system:
+\item 1.The system SHALL provide Hospital coordinator to report all blood groups in hospital.
+\subsection{Use case for requirement1}
+
+\item(a) Goal:  Generate a report on available Blood groups
+\item(b) Primary Actor: Hospital coordinator
+
+\item(d) Success Scenario:
+\begin{itemize}
+    \item The hospital coordinator will manage the blood stock starting from the blood collection to blood processing, storage and group it into different kinds of blood groups.Each process can be traced from the database.
+
+\end{itemize}
+
+\section{UML OBJECT: }
+\subsection{NAME:Blood Group Report}
+\subsection{Data Attributes:Hospital Coordinator, Blood Groups}
+
+
+%\subsection{Actions or Behaviours:blood collection,blood processing, blood storage}
+\subsection{Actions or Behaviours:Notify Hospitals of what we have, update storage records}
+
+\section{Requirement 2}
+
+\item The system SHALL provide a WEB FORM to input the donor's and patient's health information.
+\subsection{Use case for requirement2}
+\item Goal: To provide data input functionality for the Health Records
+\item Primary Actor:  Donor and Hospital Coordinator 
+\item Success Scenario: 
+\begin{itemize}
+    \item The patient will use the Web Form to input their data.
+    \end{itemize}
+    
+\section{UML OBJECT:}
+\subsection{NAME:Health Information}
+\subsection{Data Attributes:patient}
+\subsection{Actions or Behaviours:input the data}
+
+
+\section{Requirement3}
+\item 3.The system SHALL allow Disease recognizer to test blood samples to determine whether the
+samples are contaminated or okay.
+\item Goal:Collect healthy blood
+\item Actor: Disease recognizer
+\item Scenario:
+\begin{itemize}
+\item A blood processing manager get orders from many hospitals. Then he would decide which blood is not contaminated and safe for patient's health.
+\end{itemize}
+\section{UML OBJECT:}
+\subsection{NAME:Blood Samples}
+\subsection{Data Attributes:Blood processing manager}
+\subsection{Actions or Behaviours:Pick Orders,make decision about quality of blood}
+
+
+\section{Requirement4}
+\item Registration staffs SHALL register the information of donors and the recipients. 
+\subsection{Use case for requirement4}
+\item Goal: donors record is updated
+\item primary actor: Registration staff
+\item Success scenario:
+\begin{itemize}
+\item Registration staff will input the donor's details such as:
+\item Donor's id
+\item Donor's name
+\item Donor's Phone Number
+\item Donor's Email
+\item After getting all details of donor registration staff will register the donor to their WEB FORM .
+\end{itemize}
+\section{UML OBJECT:}
+\subsection{NAME:Donors Data}
+\subsection{Data Attributes:Registration Staff,Donor}
+\subsection{Actions or Behaviours:Input Donor's information}
+
+
+\section{Requirement5}
+\item 5.The system shall maintain hard copy of patients records in case electricity gone out.
+\subsection{Use case for requirement5}
+\item Goal: Maintain records safely
+\item Primary Actor: Hospital system
+\item Success Scenario:
+\begin{itemize}
+\item In case of emergency the hospital management must have all the patient records in written form.
+\end{itemize}
+\section{UML OBJECT:}
+\subsection{NAME:Record}
+\subsection{Data Attributes:Registration Staff,Donor}
+\subsection{Actions or Behaviours:Input Donor's information}
+
+\section{Tracability Matrix}
+\begin{tabular}{ |p{3cm}||p{3cm}|p{3cm}|p{3cm}|  }
+ \hline
+ \multicolumn{4}{|c|}{Tracability Matrix} \\
+ \hline
+ & Donor & Patient &Blood Sample\\
+ \hline
+ R1\\ & & & "SQL Statement 1"
+ \hline
+ R2\\
+ \hline
+ R3\\
+ \hline
+ R4\\
+ \hline
+ R5\\
+ \hline
+\end{tabular}
+
+\begin{verbatim}
+    
+
+ insert into patient(patient_id,patient_name,patient_bloodgroup)
+ values('P001','Aarti','A+');
+ insert into patient(patient_id,patient_name,patient_bloodgroup)
+ values('P002','Rama','B+');
+ insert into patient(patient_id,patient_name,patient_bloodgroup)
+ values('P003','Ramnick','A+');
+ insert into patient(patient_id,patient_name,patient_bloodgroup)
+ values('P004','Smith','O+');
+ insert into patient(patient_id,patient_name,patient_bloodgroup)
+ values('P005','Lisa','B+');
+ insert into patient(patient_id,patient_name,patient_bloodgroup)
+ values('P006','john','O+');
+ insert into patient(patient_id,patient_name,patient_bloodgroup)
+ values('P007','BOB','AB+');
+ insert into patient(patient_id,patient_name,patient_bloodgroup)
+ values('P008','Sana','O+');
+ insert into patient(patient_id,patient_name,patient_bloodgroup)
+ values('P009','Sanya','AB-');
+ insert into patient(patient_id,patient_name,patient_bloodgroup)
+ values('P010','Sahil','O-');
+\end{verbatim}
+
+\begin{verbatim}
+ insert into bloodsample(bloodbank_id, patient_id, donor_id)
+ values('C121','P001','D1');
+ insert into bloodsample(bloodbank_id, patient_id, donor_id)
+ values('C122','P002','D2');
+ insert into bloodsample(bloodbank_id, patient_id, donor_id)
+ values('C123','P003','D3');
+ insert into bloodsample(bloodbank_id, patient_id, donor_id)
+ values('C124','P004','D4');
+ insert into bloodsample(bloodbank_id, patient_id, donor_id)
+ values('C125','P005','D5');
+ insert into bloodsample(bloodbank_id, patient_id, donor_id)
+ values('C126','P006','D6');
+ insert into bloodsample(bloodbank_id, patient_id, donor_id)
+ values('C127','P007','D7');
+ insert into bloodsample(bloodbank_id, patient_id, donor_id)
+ values('C128','P008','D8');
+ insert into bloodsample(bloodbank_id, patient_id, donor_id)
+ values('C129','P009','D9');
+ insert into bloodsample(bloodbank_id, patient_id, donor_id)
+ values('C130','P010','D10');
+\end{verbatim}
+
+\begin{verbatim}
+    
+
+ insert into donor(donor_id, donor_name, donor_bloodgroup)   
+ values('D1', 'Stephanie', 'A+');
+ insert into donor(donor_id, donor_name, donor_bloodgroup)  
+ values('D2', 'Michelle', 'B+');
+ insert into donor(donor_id, donor_name, donor_bloodgroup)   
+ values('D3', 'Jean', 'A+');
+ insert into donor(donor_id, donor_name, donor_bloodgroup)   
+ values('D4', 'Daniel','O+');
+ insert into donor(donor_id, donor_name, donor_bloodgroup)   
+ values('D5', 'Marie','B+');
+ insert into donor(donor_id, donor_name, donor_bloodgroup)   
+ values('D6', 'Timothy','B+');
+ insert into donor(donor_id, donor_name, donor_bloodgroup)   
+ values('D7', 'Joyce', 'AB+');
+ insert into donor(donor_id, donor_name, donor_bloodgroup)   
+ values('D8', 'Tina','A+');
+ insert into donor(donor_id, donor_name, donor_bloodgroup)   
+ values('D9', 'George','AB-');
+ insert into donor(donor_id, donor_name, donor_bloodgroup)   
+ values('D10', 'Matthew', 'O-');
+\end{verbatim}
+
+
+ 
